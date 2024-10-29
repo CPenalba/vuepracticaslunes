@@ -10,6 +10,12 @@ app.config.globalProperties.$filters = {
       return "<span style='color:red'>" + num + "</span>";
     }
   },
+  getOperacion(numero, i) {
+    return numero + " * " + i;
+  },
+  getMultiplicacion(numero, i) {
+    return numero * i;
+  },
 };
 app.use(router).mount("#app");
 
