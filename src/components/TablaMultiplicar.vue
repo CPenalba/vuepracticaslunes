@@ -10,6 +10,17 @@
     <div v-html="html"></div>
     <hr />
 
+    <!-- <button @click="generarTabla()">Generar tabla</button>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Operación</th>
+          <th>Resultado</th>
+        </tr>
+      </thead>
+      <tbody v-html="html"></tbody>
+    </table> -->
+
     <label style="color: red">Con directivas</label>
     <br />
     <label>Introduzca número</label>
@@ -63,26 +74,41 @@ export default {
   methods: {
     generarMultiplicacion() {
       this.html = "";
+      this.html += "<table border=1>";
+      this.html += "<thead>";
+      this.html += "<tr>";
+      this.html += "<th>Operacion</th>";
+      this.html += "<th>Resultado</th>";
+      this.html += "</tr>";
+      this.html += "</thead>";
+      this.html += "<tbody>";
       for (var i = 1; i <= 10; i++) {
         var operacion = this.numero * i;
         var texto = this.numero + " * " + i;
-        this.html += "<table border=1>";
-        this.html += "<thead>";
-        this.html += "<tr>";
-        this.html += "<th>Operacion</th>";
-        this.html += "<th>Resultado</th>";
-        this.html += "</tr>";
-        this.html += "</thead>";
-        this.html += "<tbody>";
         this.html += "<tr>";
         this.html += "<td>" + texto + "</td>";
         this.html += "<td>" + operacion + "</td>";
         this.html += "</tr>";
-        this.html += "</tbody>";
-        this.html += "</table>";
       }
+      this.html += "</tbody>";
+      this.html += "</table>";
     },
   },
+
+  // methods: {
+  //           generarTabla() {
+  //               let aux = "";
+  //               for (var i = 1; i <= 10; i++){
+  //                   var operacion = this.numero + " * " + i;
+  //                   var resultado = this.numero * i;
+  //                   aux += "<tr>";
+  //                   aux += "<td>" + operacion + "</td>";
+  //                   aux += "<td>" + resultado + "</td>";
+  //                   aux += "</tr>";
+  //               }
+  //               this.html = aux;
+  //           }
+  //       }
 };
 </script>
 
