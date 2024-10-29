@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1 style="color: blue">Titulo estatico de App</h1>
     <MenuVue />
     <hr />
     <router-view> </router-view>
